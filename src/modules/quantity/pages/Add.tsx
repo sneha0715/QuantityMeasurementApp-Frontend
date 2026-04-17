@@ -54,10 +54,6 @@ export function Add() {
       setApiError("Both quantities must be of the same measurement type")
       return
     }
-    if (thisMeasurementType === "TemperatureUnit") {
-      setApiError("Temperature units do not support arithmetic operations")
-      return
-    }
     addMutation.mutate()
   }
 
@@ -98,9 +94,7 @@ export function Add() {
 
       <button
         onClick={handleAdd}
-        disabled={
-          addMutation.isPending || thisMeasurementType === "TemperatureUnit"
-        }
+        disabled={addMutation.isPending}
         className="h-10 rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
       >
         {addMutation.isPending ? "Adding..." : "Add"}

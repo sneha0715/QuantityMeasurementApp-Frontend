@@ -1,1 +1,1 @@
-Quantity Measurement Application Frontend
+Quantity Measurement Application
